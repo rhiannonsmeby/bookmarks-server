@@ -45,19 +45,22 @@ app.get('/bookmarks', (req, res, next) => {
         .catch(next)
 })
 
-app.get('/bookmarks/id', (req, res, next) => {
+app.get('/bookmarks/:id', (req, res, next) => {
     const knexInstance = req.app.get('db')
     BookmarksService.getById(knexInstance, req.params.id)
         .then(bookmark => {
-            res.json({
-                id: id,
-                title: bookmark.title,
-                bookmark_url: bookmark.bookmark_url,
-                bookmark_description: bookmark.bookmark_description,
-                rating: bookmark.rating
-            })
+            if(!bookmark) {
+                return res.status(404).json({
+                    error: {message: "Bookmark doesn't exist"}
+                })
+            }
+            res.json(bookmark)
         })
         .catch(next)
+})
+
+app.get('/', (req, res) => {
+    res.send('Hello, world!')
 })
 
 app.use(function errorHandler(error, req, res, next) {

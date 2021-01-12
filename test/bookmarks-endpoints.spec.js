@@ -48,7 +48,7 @@ describe.only('Bookmarks endpoints', function() {
                 it(`responds with 404`, () => {
                     const bookmarkId = 123456
                     return supertest(app)
-                        .get(`bookmarks/${bookmarkId}`)
+                        .get(`/bookmarks/${bookmarkId}`)
                         .expect(404, {error: {message: `Bookmark doesn't exist`}})
                 })
             })

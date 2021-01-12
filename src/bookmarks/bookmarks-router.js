@@ -33,14 +33,21 @@ bookmarksRouter
                 .status(400)
                 .send('Invalid data');
         }
+        if (!rating) {
+            logger.error(`Rating is required`);
+            return res
+                .status(400)
+                .send('Invalid data');
+        }
         //passes validation ->
         //get an id
         const id = uuid();
         const bookmark = {
             id,
             title,
-            description,
-            url
+            bookmark_description,
+            bookmark_url,
+            rating
         };
 
         bookmarks.push(bookmark);
