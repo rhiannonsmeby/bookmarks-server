@@ -3,3 +3,8 @@
 {"message":"Bookmark with id 1 not found.","level":"error"}
 {"message":"Bookmark with id 3fabd718-a4cc-4ee3-b9ee-7a28c5ded19c created","level":"info"}
 {"message":"Bookmark with id 2a453371-9551-46c7-8ae4-db6d8b2fa2ae created","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
